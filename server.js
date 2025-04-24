@@ -31,6 +31,7 @@ app.get('/test', (request, response) => {
 app.get('/books', Handlers.getBooks);
 app.post('/books', Handlers.createBook);
 app.delete('/books/:id',Handlers.deleteBook);
+app.put('/books/:id',Handlers.updateBook); //updates 
 app.get('*',(request, response)=> { // Not found
   response.status(404).send('Not found');
 });
@@ -38,6 +39,7 @@ app.get('*',(request, response)=> { // Not found
 app.use((error , request, response, next) =>{
   response.status(500).send('Server Error! Oh no!');
 })
+
 
 
 
